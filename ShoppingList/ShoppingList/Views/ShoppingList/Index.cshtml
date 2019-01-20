@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+<script src="~/Scripts/Shopping.js"></script>
+<h2>Add Shooping List</h2>
+
+<div ng-app="shoppingListApp" ng-controller="shoppingController">
+    <div class="form-group">
+        <label for="newItem">Ürün Ekle:</label>
+        <input type="text" id="newItem" class="form-control" ng-model="newItem" />
+    </div>
+    <input type="button" value="Ekle" class="btn btn-primary" ng-click="addList()">
+    <br /><br /><br /><br />
+    <div>
+        <table class="table table-hover">
+            <tr>
+                <td>Ürün Adı</td>
+                <td>Miktar</td>
+                <td colspan="3">İşlem</td>
+            </tr>
+
+            <tr ng-repeat="item in shoppingList" ng-cloak>
+                <td>{{item.itemName}}</td>
+                <td>{{item.quantity}}</td>
+                <td><button class="btn btn-danger col-lg-4 btn-block" ng-click="removeItem($index)"> Kaldır </button>  </td>
+                <td>  <button class="btn btn-success btn-block " ng-click="addOne($index)"> + </button> </td>
+                <td>
+                    <button class="btn btn-warning  btn-block" ng-click="minusOne($index)"> - </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
