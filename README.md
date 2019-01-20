@@ -10,3 +10,5 @@ User can increase or decrease quantity of product.
 User can remove an item from the list.
 
 Developer can convert to ToDoList application.
+
+Script code includes Shopping.js file and View page includes Index.cshtml
